@@ -13,7 +13,7 @@ public class UserRepository {
     ConcurrentHashMap<Long, UserDTO> users = new ConcurrentHashMap<>();
 
     public void add(UserDTO userDTO){
-        if(userDTO.id() % 3 == 0){
+        if(userDTO.id() % 2 == 0){
             throw new MyRuntimeException(userDTO.id(),"Error to add user id:" + userDTO.id());
         }
         users.put(userDTO.id(), userDTO);

@@ -1,6 +1,7 @@
 package org.acme.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.control.ActivateRequestContext;
 import jakarta.inject.Inject;
 import org.acme.dto.UserDTO;
 import org.acme.exception.MyRuntimeException;
@@ -30,6 +31,7 @@ public class UserService {
     public Collection<UserDTO> findAll(){
         return userRepository.findAll();
     }
+
     public void addRestClient(UserDTO userDTO){
         restClientExample.addUser(userDTO.id(),userDTO);
     }
